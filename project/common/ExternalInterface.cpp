@@ -8,20 +8,11 @@
 
 
 #include <hx/CFFI.h>
+#include <stdio.h>
 #include "Utils.h"
 
 
 using namespace att;
-
-
-
-static value att_requestIDFA (value inputValue) {
-	
-	requestIDFA();
-	
-}
-DEFINE_PRIM (att_requestIDFA, 0);
-
 
 
 extern "C" void att_main () {
@@ -31,6 +22,12 @@ extern "C" void att_main () {
 }
 DEFINE_ENTRY_POINT (att_main);
 
+static value att_requestIDFA() {
 
+    requestIDFA();
+    return alloc_null();
+
+}
+DEFINE_PRIM (att_requestIDFA, 0);
 
 extern "C" int att_register_prims () { return 0; }

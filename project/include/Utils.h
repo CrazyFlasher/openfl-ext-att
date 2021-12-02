@@ -4,10 +4,11 @@
 
 namespace att {
 	
-	
-	int requestIDFA();
-	
-	
+	extern "C"
+    {
+    	void requestIDFA();
+    }
+
 }
 
 
