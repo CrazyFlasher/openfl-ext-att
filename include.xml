@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<ndll name="att" />
+
+	<ndll name="att" if="ios" />
+	<dependency name="AdSupport.framework" if="ios" />
+	<dependency name="AppTrackingTransparency.framework" if="ios" />
+
+</project>
