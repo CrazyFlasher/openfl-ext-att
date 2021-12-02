@@ -24,7 +24,7 @@ DEFINE_ENTRY_POINT (att_main);
 
 static value att_requestIDFA() {
 
-    requestIDFA();
+    att_requestIDFA();
     return alloc_null();
 
 }

@@ -3,7 +3,7 @@
 
 
 namespace att {
-	
+
 	extern "C"
     {
     	void requestIDFA();
