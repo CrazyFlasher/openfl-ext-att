@@ -15,13 +15,12 @@ using namespace att;
 
 
 
-static value att_sample_method (value inputValue) {
+static value att_requestIDFA (value inputValue) {
 	
-	int returnValue = SampleMethod(val_int(inputValue));
-	return alloc_int(returnValue);
+	requestIDFA();
 	
 }
-DEFINE_PRIM (att_sample_method, 1);
+DEFINE_PRIM (att_requestIDFA, 0);
 
 
 
