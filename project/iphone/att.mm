@@ -1,5 +1,5 @@
-#import <AppTrackingTransparency/AppTrackingTransparency.h>
-#import <AdSupport/AdSupport.h>
+//#import <AppTrackingTransparency/AppTrackingTransparency.h>
+//#import <AdSupport/AdSupport.h>
 
 - (void)requestIDFA;
 
@@ -24,7 +24,7 @@ extern "C"
 	void requestIDFA()
 	{
         printf("init requestIDFA HAHAHAHAHA3 --------------------------------------------------- xx\n");
-        attObj = [[att alloc] init];
-        [attObj requestIDFA];
+        att = [[att alloc] init];
+        [att requestIDFA];
     }
 }
