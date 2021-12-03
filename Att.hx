@@ -12,6 +12,6 @@ class Att
         att_requestIDFA();
     }
 
-    private static var att_requestIDFA = Lib.load("__reg_att", "__reg_att_requestIDFA", 0);
+    private static var att_requestIDFA = Lib.load("__reg_att", "att_requestIDFA", 0);
     #end
 }

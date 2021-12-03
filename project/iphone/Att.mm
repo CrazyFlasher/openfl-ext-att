@@ -24,7 +24,7 @@ extern "C"
 	void requestIDFA()
 	{
         printf("init requestIDFA HAHAHAHAHA3 --------------------------------------------------- xx\n");
-        att = [[att alloc] init];
-        [att requestIDFA];
+        Att = [[Att alloc] init];
+        [Att requestIDFA];
     }
 }
