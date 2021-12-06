@@ -24,7 +24,10 @@
 {
 	NSLog(@"AppTrackTrans: makeATTRequest");
 
-	[ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {}];
+    if (@available(iOS 14, *))
+    {
+        [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {}];
+    }
 }
 
 
