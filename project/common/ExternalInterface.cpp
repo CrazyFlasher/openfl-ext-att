@@ -9,25 +9,29 @@
 
 #include <hx/CFFI.h>
 #include <stdio.h>
-#include "Att.h"
+#include "AppTrackTrans.h"
 
+#define safe_alloc_string(a) (a!=NULL?alloc_string(a):NULL)
 
 using namespace att;
 
 
-extern "C" void att_main () {
-	
-	val_int(0); // Fix Neko init
-	
+static void make_att_request()
+{
+	makeATTRequest();
 }
-DEFINE_ENTRY_POINT (att_main);
+DEFINE_PRIM (make_att_request, 0);
 
-static value att_requestIDFA() {
 
-    att_requestIDFA();
-    return alloc_null();
 
+extern "C" void att_main()
+{
+	val_int(0);
 }
-DEFINE_PRIM (att_requestIDFA, 0);
+DEFINE_ENTRY_POINT(att_main);
 
-extern "C" int att_register_prims () { return 0; }
+
+
+extern "C" int att_register_prims() { return 0; }
+
+

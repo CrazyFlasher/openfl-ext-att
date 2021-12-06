@@ -2,6 +2,8 @@
 
 	<include name="${HXCPP}/build-tool/BuildCommon.xml"/>
 
+	<set name="debug_extra" value="-debug" if="fulldebug" />
+
 	<files id="common">
 
 		<compilerflag value="-Iinclude"/>
@@ -12,29 +14,27 @@
 
 	<files id="iphone">
 
+		<compilerflag value="-IiPhone/include"/>
 		<compilerflag value="-Iinclude"/>
 
-		<file name="iphone/Att.mm"/>
+		<file name="iphone/AppTrackTrans.mm"/>
 
 	</files>
 
-	<set name="SLIBEXT" value=".lib" if="windows"/>
-	<set name="SLIBEXT" value=".a" unless="windows"/>
-	<set name="SLIBEXT" value=".so" if="webos"/>
-
-	<set name="DEBUGEXTRA" value="-debug" if="fulldebug" />
-
-	<target id="NDLL" output="${LIBPREFIX}att${MSVC_LIB_VERSION}${DEBUGEXTRA}${LIBEXTRA}" tool="linker" toolid="${STD_MODULE_LINK}">
+	<target id="NDLL" output="${LIBPREFIX}att${debug_extra}${LIBEXTRA}" tool="linker" toolid="${STD_MODULE_LINK}">
 
 		<outdir name="../ndll/${BINDIR}"/>
-		<ext value=".ndll" if="windows || mac || linux"/>
+
+		<ext value=".ndll" if="windows || mac || linux" />
+
 		<files id="common"/>
+		<files id="iphone" if="iphone"/>
 
 	</target>
 
 	<target id="default">
 
-		<target id="NDLL"/>
+		<target id="NDLL" if="iphone" />
 
 	</target>
 

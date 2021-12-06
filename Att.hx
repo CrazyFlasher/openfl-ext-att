@@ -6,12 +6,9 @@ import cpp.Lib;
 
 class Att
 {
-    #if ios
-    public static function makeRequestIDFA():Void
-    {
-        att_requestIDFA();
+    public static function makeRequestIDFA ():Void {
+        make_request();
     }
 
-    private static var att_requestIDFA = Lib.load("__reg_att", "att_requestIDFA", 0);
-    #end
+    private static var make_request = Lib.load ("att", "make_att_request", 0);
 }
